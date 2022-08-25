@@ -48,6 +48,9 @@ void Machine::set_state(States new_state)
 // State functions
 void Machine::state_startup()
 {
+
+    in_expiration = false;
+
     if (state_first_entry) {
         state_first_entry = false;
     }
@@ -60,6 +63,9 @@ void Machine::state_startup()
 
 void Machine::state_inspiration()
 {
+
+    in_expiration = false;
+
     if (state_first_entry) {
 
         // Clear all faults. They will get processed as states run.
@@ -116,6 +122,9 @@ void Machine::state_inspiration()
 
 void Machine::state_inspiration_hold()
 {
+
+    in_expiration = false;  
+
     if (state_first_entry) {
         state_first_entry = false;
     }
@@ -132,6 +141,9 @@ void Machine::state_inspiration_hold()
 
 void Machine::state_expiration()
 {
+
+    in_expiration = true;
+
     if (state_first_entry) {
         state_first_entry = false;
 
@@ -155,6 +167,9 @@ void Machine::state_expiration()
 
 void Machine::state_peep_pause()
 {
+
+    in_expiration = false;
+
     if (state_first_entry) {
         state_first_entry = false;
     }
@@ -169,6 +184,9 @@ void Machine::state_peep_pause()
 
 void Machine::state_expiration_hold()
 {
+
+    in_expiration = false;
+
     if (state_first_entry) {
         state_first_entry = false;
     }
@@ -208,7 +226,12 @@ void Machine::state_actuator_home()
         }
         else {
             // Start the home sequence
+            if (in_expiration == true) {
+                p_actuator->homeExpiration();
+            }
+            else {
             p_actuator->home();
+            }
         }
     }
 

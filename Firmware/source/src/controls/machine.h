@@ -80,6 +80,9 @@ private:
     // Set the current state in the state machine
     void set_state(States);
 
+    // Boolean indicating if machine is in state ST_EXPR to correct homing bug.
+    bool in_expiration;
+
     // State functions
     void state_startup();
     void state_inspiration();

@@ -12,6 +12,10 @@ public:
     void set_speed(float);
     // double get_position();
     void home();
+
+    // Use for when actuator is in expiration state (machine is in state ST_EXPR)
+    void homeExpiration();
+    
     bool is_moving();
     bool remaining_steps_to_go();
     void set_position(double);

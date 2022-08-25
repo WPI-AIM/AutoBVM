@@ -54,6 +54,15 @@ void Stepper::home()
     stepper_5718L.setSpeed(STEPPER_HOMING_SPEED_IN_STEPS_SEC);
 }
 
+void Stepper::homeExpiration()
+{
+    /* Move the paddle through a full rev.
+     * Home should be within this distance.
+     */
+    stepper_5718L.move(-TIMING_PULLEY_STEPS_PER_REV);
+    stepper_5718L.setSpeed(STEPPER_HOMING_SPEED_IN_STEPS_SEC);
+}
+
 bool Stepper::is_moving()
 {
     return stepper_5718L.isRunning();

@@ -1,3 +1,13 @@
+# [1.0.1] - 2022-08-25
+
+### Added
+
+- Added a function called 'homeExpiration()' and a boolean called 'in_expiration' to fix the bug listed below.
+
+### Fixed
+
+- Fixed bug where the ventilator pedal would switch direction mid-cycle if told to home itself while in expiration.
+
 # [1.0.0] - 2021-09-14
 
 ### Added

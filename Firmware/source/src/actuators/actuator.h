@@ -45,6 +45,10 @@ public:
 
     float get_current_speed();
     void home();
+    
+    // Use for when actuator is in expiration state (machine is in state ST_EXPR)
+    void homeExpiration();
+
     bool is_home();
     bool is_moving();
     double get_position();

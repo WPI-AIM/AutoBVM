@@ -87,6 +87,11 @@ void Actuator::home()
     stepper.home();
 }
 
+void Actuator::homeExpiration()
+{
+    stepper.homeExpiration();
+}
+
 bool Actuator::is_home()
 {
     // double current_position = stepper.get_position();
