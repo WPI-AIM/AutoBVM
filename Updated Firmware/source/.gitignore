@@ -1,0 +1,34 @@
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# CLion User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# CMake
+cmake-build-*/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+#### Project Specific ####
+.pio/
+
+# CLion auto-generated files
+CMakeLists.txt
+CMakeListsPrivate.txt
+
+# VSCode auto-generated files
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Formatting
+.clang-format
+
+
+# Manually Excluded Files
+exclude/
